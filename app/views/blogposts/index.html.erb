@@ -1,0 +1,9 @@
+<h1>Blogposts</h1>
+<ul>
+    <% @blogposts.each do |blogpost| %>
+    <li>
+       <%= link_to blogpost.title, blogpost%>
+    </li>
+    <% end %>
+</ul>
+<%= link_to 'New Blogpost', new_blogpost_path %>

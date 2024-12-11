@@ -1,0 +1,12 @@
+<h1><%= @blogpost.title %></h1>
+<p> <%= @blogpost.body %> </p>
+<ul>
+    <li> <%= link_to "Edit", edit_blogpost_path(@blogpost) %> </li>
+    <li> <%= link_to "Destroy", blogpost_path(@blogpost), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> </li>
+</ul>
+
+<h2>Comments </h2>
+<%= render @blogpost.comments%>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form', blogpost: @blogpost %>
